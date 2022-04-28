@@ -1,0 +1,32 @@
+<div class="field is-horizontal">
+  <div class="field-label is-normal do-not-wrap">
+    <label class="label"> ATC list</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-narrow end">
+      <div class="control">
+        <div class="select is-fullwidth">
+          <select [ngModel]="atcId" (ngModelChange)="navigateToAtc($event)">
+            <option *ngFor="let atcElem of atcList" [value]="atcElem.id">
+              {{ atcElem.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="tabs is-boxed">
+  <ul>
+    <li routerLinkActive="is-active">
+      <a [routerLink]="['goal']">Goal</a>
+    </li>
+    <li routerLinkActive="is-active">
+      <a [routerLink]="['visit']">Visit</a>
+    </li>
+    <li routerLinkActive="is-active">
+      <a [routerLink]="['goal/goalchild']">goalchild</a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
